@@ -1,0 +1,112 @@
+name: iTools
+author: Inder00
+version: 1.2.7
+main: pl.inder00.tools.Tools
+commands:
+  whois:
+    description: Informacje o graczu
+  tp:
+    aliases: [tppos,teleport]
+    description: Teleportacja
+  top:
+    aliases: [powierzchnia,surface]
+    description: Teleportacja na powierzchnie
+  spawn:
+    aliases: [spawn]
+    description: Teleportacja na spawn
+  setspawn:
+    aliases: [ustawspawn]
+    description: Ustawienie miejsca spawnu
+  invsee:
+    aliases: [openinv,zobaczeq,zobaczinventory,zobacz]
+    description: Podgladanie inventory gracza
+  tpa:
+    aliases: [teleportacja,przeleportuj]
+    description: Prosba o teleportacje do innego gracza
+  gamemode:
+    aliases: [gm,gmod]
+    description: Zmiana trybu gry
+  heal:
+    aliases: [ulacz]
+    description: Uleczanie
+  god:
+    aliases: [bog]
+    description: Niesmiertelnosc
+  broadcast:
+    aliases: [bc]
+    description: Wiadomosc do wszystkich
+  hat:
+    aliases: [kapelusz]
+    description: Kapelusz
+  feed:
+    description: Najedzenie
+  endersee:
+    aliases: [enderchestsee]
+    description: Podgladanie enderchestu graczy
+  enderchest:
+    aliases: [ec]
+  helpop:
+    description: Wiadomosc do administracji
+  msg:
+    description: Wiadomosc do innego gracza
+    aliases: [m,tell]
+  reply:
+    aliases: [r,re,odpisz]
+    description: Odpisanie do innego gracza
+  list:
+    aliases: [lista]
+    description: Lista graczy
+  fly:
+    description: Latanie
+  enchant:
+    description: Enchantowanie przedmiotow
+    aliases: zestawy
+  kit:
+    aliases: [zestawy,zestaw,kits]
+    description: Zestaw
+  chat:
+    description: Zarzadzanie chatem
+    aliases: c
+  online:
+    description: Czas spedzony na serwerze
+  kick:
+    aliases: [wyrzuc]
+    description: Wyrzucanie gracza z serwera
+  kickall:
+    aliases: [wyrzucwszystkich]
+    descrption: Wyrzucanie wszystkich graczy z serwera
+  repair:
+    aliases: [napraw]
+    description: Naprawa przedmiotu
+  tphere:
+    aliases: [s,przenies]
+    description: Teleportacja gracza
+  alert:
+    description: Wiadomosc do wszystkich graczy
+  mute:
+    aliases: [wycisz]
+    description: Wyciszanie gracza/y
+  home:
+    aliases: [dom]
+    description: Teleportacja do domu
+  sethome:
+    aliases: [ustawdom]
+    description: Ustawianie lokalizacji domu
+  warp:
+    aliases: [warps]
+    description: Lista dostepnych warpow
+  delwarp:
+    aliases: [delwarps]
+    description: Usuwanie warpu
+  setwarp:
+    aliases: [setwarps]
+    description: Ustawiania warpu
+  name:
+    aliases: [nick, nickname, customname]
+    description: Zmiana pseudonimu
+  workbench:
+    aliases: [wb]
+    description: Przenosny stol rzemielsny
+  back:
+    aliases: [wroc,deathpoint]
+    description: Powrot na miejsce smierci

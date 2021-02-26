@@ -1,0 +1,430 @@
+# Czas opoznienia teleportu
+teleport-delay: 5
+
+# Limit wiadomosci na okreslony czas
+chat-cooldown: 5
+
+# Wiadomosci
+messages:
+  
+  # Wyglad chatu dla administracji (.wiadomosc do innego administratora)
+  # Zmienne: {NICKNAME}, {MESSAGE}
+  # Uprawnienie: tools.admin.chat
+  admin-chat: '&8[&cChat administracji&8] &c{NICKNAME}: {MESSAGE}'
+  
+  # Kolorowanie wiadomosci na chacie
+  # Uprawnienie: tools.chat.color
+  
+  # Chat jest wylaczony
+  chat-off: '&cChat jest obecnie wylaczony'
+  
+  # Informacja, ze wiadomosc mozesz wyslac za X sekund
+  # Zmienne: {COOLDOWN}
+  # Bypass: tools.chat.cooldown.bypass
+  next-message: '&7Kolejna wiadomosc mozesz wyslac za &e{COOLDOWN}sek.'
+  
+  # Jestes wyciszony
+  # Zmienne: {TIME}
+  you-muted: '&cJestes wyciszony jeszcze przez {TIME}'
+  
+  # Komendy
+  commands:
+  
+    # Brak uprawnien
+    no-permissions: '&cNie posiadasz uprawnien do wykonania tej komendy!'
+    
+    # Gracz offline
+    player-offline: '&cPodany gracz jest offline'
+    
+    # Niespowidziewany blad
+    error: '&cWystapil blad'
+    
+    # Przeteleportowanie
+    teleported: '&7Zostales przeteleportowany.'
+    
+    # Poruszenie sie
+    you-move: '&cPoruszyles sie, teleportacja anulowana'
+    
+    # Zostales wyrzucony
+    # Zmienne: {WHY}, {ADMIN}, %nl%
+    you-kicked: '&7Zostales wyrzucony przez &e{ADMIN}%nl%&7Powod: &e{WHY}'
+  
+    # Komenda /whois <onlineplayer>
+    # Zmienne: {NICKNAME}, {IP}, {WORLD}, {X}, {Y}, {Z}, {GAMEMODE}, {FLYING}, {ONLINE-TIME}, {FIRST-JOIN}, {HEALTH}, {FOOD}, {TOTAL-ONLINE}
+    # Uprawnienie: tools.whois
+    # Uprawnienie, zeby pokazywalo IP: tools.whois.ip
+    whois:
+    - '&8=============================='
+    - ''
+    - '&8» &7Informacje o &e{NICKNAME}'
+    - '&8» &7Podstawowe: '
+    - ' &8* &7Lokalizacja: &e{WORLD}, x: {X}, y: {Y}, z: {Z}' 
+    - ' &8* &7Gamemode: &e{GAMEMODE}'
+    - ' &8* &7Latanie: &e{FLYING}'
+    - ' &8* &7Zycie: &e{HEALTH}/20'
+    - ' &8* &7Glod: &e{FOOD}/20'
+    - '&8» &7Dodatkowe: '
+    - ' &8* &7Aktualna sesja: &e{ONLINE-TIME}'
+    - ' &8* &7Czas spedzony na serwerze: &e{TOTAL-ONLINE}'
+    - ' &8* &7Dolaczyl: &e{FIRST-JOIN}'
+    - ' &8* &7IP: &e{IP}'
+    - ''
+    - '&8=============================='
+    
+    # Komenda /tp <x/onlineplayer> <y> <z>
+    # Zmienne: {X}, {Y}, {Z}
+    # Uprawnienie: tools.tp
+    tp:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /tp <x/onlineplayer> <y> <z>'
+      
+      # Przeteleportowanie
+      # Zmienne: {X}, {Y}, {Z}
+      teleported: '&8» &7Zostales przeteleportowany na &ex: {X}, y: {Y}, z: {Z}'
+      
+      # Przeleportowanie
+      # Zmienne: {PLAYER-FROM}, {PLAYER-TO}
+      other-teleported: '&8» &7Gracz &e{PLAYER-FROM} &7zostal przeteleportwany do &e{PLAYER-TO}'
+    
+    # Komenda /top
+    # Uprawnienie: tools.top
+    top: '&8» &7Zostales przeteleportwany na &epowierzchnie'
+    
+    # Komenda /spawn
+    # Uprawnienie: tools.spawn
+    # Pominiecie czekania: tools.spawn.bypass
+    spawn:
+    
+      # Wiadomosc
+      cooldown-teleport: '&8» &7Zostaniesz przeteleportowany na &espawn &7za &e5sek.'
+    
+    # Komenda /setspawn
+    # Zmienne: {WORLD}, {X}, {Y}, {Z}
+    # Uprawnienie: tools.setspawn
+    setspawn: '&8» &7Ustawiono spawn dla swiata &e{WORLD} &7na &ex: {X}, y: {Y}, z: {Z}'
+    
+    # Komenda /invsee[/openinv] <onlineplayer>
+    # Uprawnienie: tools.invsee
+    invsee:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /invsee <onlineplayer>'
+    
+    # Komenda /tpa <onlineplayer/accept/deny>
+    # Uprawnienie: tools.tpa
+    tpa:
+    
+      # Prośba o przeteleportowanie
+      # Zmienne: {REQUEST-PLAYER}
+      request-for-teleportation:
+      - '&8=============================='
+      - '&8» &7Prosba o teleportacje'
+      - ' &8* &7Gracz &e{REQUEST-PLAYER} &7prosi o teleportacje do &eciebie.'
+      - '&8» &7Aby zaakceptowac wpisz &e/tpa accept'
+      - '&8» &7Aby odmowic wpisz &e/tpa deny'
+      - '&8» &7Prosba wygasa za &e5min.'
+      - '&8=============================='
+      
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /tpa <onlineplayer>'
+      
+      # Informacja, ze prosba zostala wyslana
+      # Zmienne: {REQUEST-PLAYER}
+      request-sended: '&8» &7Prosba o teleportacje do &e{REQUEST-PLAYER} &7zostala &ewyslana'
+      
+      # Informacja, ze prosba zostala zaakceptowana
+      # Zmienne: {REQUEST-PLAYER}
+      request-accepted: '&8» &7Prosba o teleportacje do gracza &e{REQUEST-PLAYER} &7zostala &ezaakceptowana.'
+      
+      # Informacja, ze zaakceptowales prosbe
+      # Zmienne: {REQUEST-PLAYER}
+      you-accepted-request: '&8» &7Zaakceptowales prosbe o teleportacje gracza &e{REQUEST-PLAYER}'
+      
+      # Informacja, ze prosba o teleportacje zostala odmowiona
+      # Zmienne: {REQUEST-PLAYER}
+      request-deny: '&8» &7Gracz &e{REQUEST-PLAYER} &7odmowil do siebie teleportacji'
+      
+      # Informacja, ze odmowiles prosbie o teleportacji
+      # Zmienne: {REQUEST-PLAYER}
+      you-deny-request: '&8» &7Odmowiles prosbie teleportacji do Ciebie graczowi &e{REQUEST-PLAYER}'
+      
+      # Informacja, ze nie masz zadnych oczekujacych teleportacji
+      nothing-requests: '&8» &cNie masz zadnych oczekujacych teleportacji do Ciebie.'
+      
+      # Wiadomosc 
+      # Zmienne: {REQUEST-PLAYER}
+      cooldown-teleport: '&8» &7Zostaniesz przeteleportowany do &e{REQUEST-PLAYER} &7za &e5sek.'
+    
+    # Komenda /gamemode[/gm] <0/1/2/survival/creative/adventure> <onlineplayer>
+    # Uprawnienie: tools.gamemode
+    gamemode:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /gamemode <gamemode> <onlineplayer>' 
+      
+      # Informacja, ze tryb gry zostal zmieniony
+      # Zmienne: {GAMEMODE}
+      gamemode-changed: '&8» &7Zmieniles tryb gry na &e{GAMEMODE}'
+      
+      # Informacja, ze tryb gry zostal zmieniony innemu graczowi
+      #  # Zmienne: {GAMEMODE}, {NICKNAME}
+      gamemode-changed-other: '&8» &7Zmieniles tryb gry na &e{GAMEMODE} &7graczowi &e{NICKNAME}'
+    
+    # Komenda /heal
+    # Uprawnienie: tools.heal
+    heal: '&8» &7Zostales &euleczony'
+    
+    # Komenda /god
+    # Uprawnienie: tools.god
+    # Zmienne: {STATUS}
+    god: '&8» &7Zmieniles tryb &eniesmiertelnosci &7na &e{STATUS}'
+    
+    # Komenda /broadcast[/bc] <text>
+    # Uprawnienie: tools.broadcast
+    # Zmienne: {TEXT}
+    broadcast:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /broadcast <text>' 
+      
+      # Zmienne: {TEXT}
+      style: '&8» &cUWAGA: &r&e{TEXT}'
+    
+    # Komenda /hat
+    # Uprawnienie: tools.hat
+    # Zmienne: {ITEM}
+    hat:
+      
+      # Informacja, ze mamy zalozony kapelusz
+      new-hat: '&8» &7Ciesz sie nowym &ekapeluszem &7(&e{ITEM}&7)'
+      
+      # Informacja, ze mamy nieprawidlowy item w dloni
+      incorrect-item: '&8» &cMusisz trzymac przedmiot w rece, aby go zalozyc'
+    
+    # Komenda /feed
+    # Uprawnienie: tools.feed
+    feed: '&8» &7Zostales &enajedzony'
+    
+    # Komenda /endersee <onlineplayer>
+    # Uprawnienie: tools.endersee
+    endersee:
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /endersee <onlineplayer>'
+      
+    # Komenda /enderchest
+    # Uprawnienie: tools.enderchest
+    enderchest: ''
+    
+    # Komenda /helpop <text>
+    # Uprawnienie: tools.helpop
+    # Uprawnienie do odbierania wiadomosci: tools.helpop.receive
+    helpop:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /helpop <text>' 
+      
+      # Zmienne: {TEXT}, {PLAYER}
+      style: '&8[&cHelpOp&8] &c{PLAYER}: &r&e{TEXT}'
+      
+      # Informacja, ze zgloszenie zostalo wyslane
+      sended: '&8» &7Wiadomosc zostala wyslana do &eadministracji'
+      
+    # Komenda /msg <onlineplayer> <text>
+    # Uprawnienie: tools.msg
+    msg:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /msg <onlineplayer> <text>'
+      
+      # Zmienne: {TEXT}, {FROM-PLAYER}, {TO-PLAYER}
+      style: '&8[&e{FROM-PLAYER} &8» &e{TO-PLAYER}&8] &7{TEXT}'
+      
+    # Komenda /reply <text>
+    # Uprawnienie: tools.reply
+    reply:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /reply <text>' 
+   
+      # Informacja, ze z nikim nie pisales/as
+      nobody: '&8» &cOstatnio z nikim nie pisales'
+      
+    # Komenda /list
+    # Uprawnienie: tools.list
+    # Zmienne: {ONLINE}, {MAXONLINE}
+    list: '&8» &7Aktualnie online na serwerze &e{ONLINE}/{MAXONLINE}'
+    
+    # Komenda /fly [<onlineplayer>]
+    # Uprawnienie: tools.fly
+    fly:
+    
+      # Informacja, ze tryb latania zostal zmieniony
+      # Zmienne: {FLY}
+      status-changed: '&8» &7Zmieniles tryb latania na &e{FLY}'
+      
+      # Informacja, ze tryb latania zostal zmieniony innemu graczowi
+      # Zmienne: {FLY}, {NICKNAME}
+      status-changed-other: '&8» &7Zmieniles tryb latania na &e{FLY} &7graczowi &e{NICKNAME}'
+      
+    # Komenda /enchant <enchantment> <data>
+    # Uprawnienie: tools.enchant
+    enchant:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /enchant <enchantment> <level>'
+      
+      # Informacja, ze enchant zostal nalozony na item
+      # Zmienne: {TOOL}, {ENCHANT}
+      new-enchant: '&8» &7Na twoj przemiot &e{TOOL} &7zostal nalozony enchant &e{ENCHANT}'
+      
+      # Informacja, ze mamy nieprawidlowy item w dloni
+      incorrect-item: '&8» &cMusisz trzymac przedmiot w rece, aby go zenchantowac'
+      
+      # Informacja, ze podany enchant nie istnieje
+      enchant-not-found: '&8» &cPodany enchant nie zostal znaleziony'
+    
+    # Komenda /kit [<name>]
+    # Uprawnienie: tools.kit
+    # Bypass: tools.kits.bypass
+    kit:
+    
+      # Informacja, ze zestaw mozemy odebrac za X.
+      # Zmienne: {KITNAME}, {TIME}
+      not-availability: '&8» &7Zestaw &e{KITNAME} &7bedziesz mogl uzyc za &e{TIME}'
+      
+      # Informacja, ze gracz zostal zestaw
+      # Zmienne: {KITNAME}
+      you-got: '&8» &7Dostales zestaw &e{KITNAME}'
+      
+      # Informacja, ze podany zestaw nie istenieje
+      not-exist: '&8» &cPodany zestaw nie istnieje!'
+      
+    # Komenda /chat <on/off/clear>
+    # Uprawnienie: tools.chat
+    # Uprawnienie, aby pisac na wylaczonym chacie: tools.chat.bypass
+    chat:
+   
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /chat <on/off/clear>' 
+   
+      # Informacja, ze chat jest aktualnie OFF/ON
+      # Zmienne: {STATUS}
+      current: '&8» &cChat jest obecnie {STATUS}'
+      
+      # Informacja, ze chat zostal wyczyszcony
+      clear-list:
+      - ' '
+      - ' '
+      - '&8» &7Chat zostal &ewyczyszczony'
+      - ' '
+      - ' '
+      
+      # Informacja, ze chat zostal wylaczony
+      off-list:
+      - ' '
+      - ' '
+      - '&8» &7Chat zostal &ewylaczony'
+      - ' '
+      - ' '
+      
+      # Informacja, ze chat zostal wlaczony
+      on-list:
+      - ' '
+      - ' '
+      - '&8» &7Chat zostal &ewlaczony'
+      - ' '
+      - ' '
+      
+    # Komenda /online
+    # Uprawnienie: tools.online
+    # Zmienne: {TIME}
+    online: '&8» &7Na serwerze spedziles &e{TIME}'
+    
+    # Komenda /kick <onlineplayer> <text>
+    # Uprawnienie: tools.kick
+    kick:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /kick <onlineplayer> <text>' 
+      
+      # Informacja, ze gracz zostal wyrzucony
+      # Zmienne: {NICKNAME}, {ADMIN}, {WHY}
+      kick-broadcast: '&8» &7Gracz &e{NICKNAME} &7zostal wyrzucony przez &e{ADMIN} &7za &e{WHY}'
+      
+    # Komenda /kickall <text>
+    # Uprawnienie: tools.kickall
+    kickall:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /kickall <text>'
+    
+    # Komenda /repair
+    # Uprawnienie: tools.repair
+    # Zmienne: {TOOL}
+    repair: '&8» &7Twoj przedmiot &e{TOOL} &7zostal &7naprawiony'
+    
+    # Komenda /tphere[/s] <onlineplayer>
+    # Uprawnienie: tools.tphere
+    tphere:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /tphere[/s] <onlineplayer>'
+      
+      # Przeteleportowanie
+      # Zmienne: {X}, {Y}, {Z}
+      teleported: '&8» &7Zostales przeteleportowany na &ex: {X}, y: {Y}, z: {Z}'
+      
+      # Informacja, ze gracz zostal przeteleportowany
+      # Zmienne: {PLAYER}
+      player-teleported: '&8» &7Gracz &e{PLAYER} &7zostal przeteleportwany'
+      
+    # Komenda /alert <actionbar/chat> <text>
+    # Uprawnienie: tools.alert
+    # Zmienne: {TEXT}
+    alert:
+      
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /alert <actionbar/chat> <text>'
+      
+      actionbar:
+        
+        # Wyglad
+        style: '&8» &cUWAGA: &7{TEXT}'
+      
+      chat:
+        # Styl do chatu jest brany z /broadcast
+        
+    # Komenda /mute <onlineplayer> <time>
+    # Uprawnienie: tools.mute
+    # Zmienne: {PLAYER}, {ADMIN}, {TIME}
+    mute:
+    
+      # Poprawne uzycie
+      incorrect-use: '&cPoprawne uzycie /mute <onlineplayer> <czas>'
+      
+      # Zly format czasu
+      incorrect-time: '&cNiepoprawny format czasu. Zapisz czas w sekundach'
+      
+      # Gracz wyciszony
+      muted: '&8» &7Gracz &e{PLAYER} &7zostal wycziszony przez &e{ADMIN} &7na &e{TIME}'
+      
+      # Gracz odciszony
+      unmuted: '&8» &7Gracz &e{PLAYER} &7zostal odciszony przez &e{ADMIN}'
+
+    # Komenda /home
+    # Uprawnienie: tools.home
+    home:
+
+      # Nie ustawiony dom
+      not-set: "&cNie ustawiles jeszcze domu"
+
+      # Oczekiwanie na teleport
+      cooldown: "&8» &7Do Twojego domu zostaniesz przeteleportowany za &e5sek."
+
+    # Komenda /sethome
+    # Uprawnienie: tools.sethome
+    sethome:
+
+      # Nowy dom
+      new-home: "&8» &7Ustawiles nowy &edom!"

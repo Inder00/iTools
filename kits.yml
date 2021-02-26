@@ -1,0 +1,60 @@
+# Komenda /kit [<name>]
+# Uprawnienie: tools.kit, aby przegladac zestawy
+# Uprawnienie pozwalajace na uzycie zestawu: tools.kit.<name>
+
+config:
+  
+  # GUI
+  gui:
+  
+    # Nazwa GUI
+    name: '&8» &eDostepne zestawy:'
+    
+    # Item (tzw. kit)
+    item:
+    
+      # Nazwa w gui
+      # Zmienne: {KITNAME}
+      name: '&8» &7Zestaw &e{KITNAME}'
+      
+      # Lore w gui
+      # Zmienne: {AVAILABILITY}, {KITNAME}
+      lore:
+      - '&8» &7Nazwa zestawu: &e{KITNAME}'
+      - ' '
+      - '&8» &7Mozesz uzyc za &e{AVAILABILITY}'
+  
+  # Zestawy
+  kits:
+    vip:
+      delay: 3600
+      item-in-gui: diamond_sword
+      slot: 10
+      items:
+        kilof:
+          id: 278
+          data: 0
+          amount: 1
+          name: '&8» &eKILOF WOJOWNIKA'
+          lore:
+          - '&8» &7Kilof jedynie dla &eElity'
+          enchantments:
+          - 'fortune:3'
+          - 'unbreaking:4'
+        miecz:
+          id: diamond_sword
+          enchantments:
+          - 'sharpness:5'
+          - 'unbreaking:3'
+          - 'fire:2'
+        jablko:
+          id: apple
+
+    drewno:
+      delay: 900
+      item-in-gui: log
+      slot: 11
+      items:
+        drewno:
+          id: wood
+          amount: 64

@@ -1,0 +1,21 @@
+##########################
+# 
+# Ustawienia chatu
+# Wsparcie: PermissionEX
+#
+# ZMIENNE:
+# {NICKNAME}
+# {GROUP}
+# {MESSAGE}
+# {DISPLAYNAME}
+#
+##########################
+config:
+
+  # Domylsny sposob wyswietlania
+  default: '&7{NICKNAME}: &f{MESSAGE}'
+  
+  # Ustawienia dla grup
+  groups:
+    VIP: '&8[&6VIP&8] &e{NICKNAME}: &f{MESSAGE}'
+    ADMIN: '&8[&cADMIN&8] &c{NICKNAME}: &6{MESSAGE}'
